@@ -1,0 +1,107 @@
+<html>
+<head>
+<style>
+      body{
+            background-color: lightblue;
+          }
+
+      .lgn{
+            margin: 15px;
+            color: blue;
+            opacity: 0.9;
+            font-size: 30px;
+          }
+ 
+         .container{
+            background-color: lightgoldenrodyellow;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            width: 450px;
+            margin: 65px 460px;
+            height: 500px;
+            visibility: visible;
+          }
+
+         .fn{
+            margin: 5px -59px;
+            padding: 2px 3px;
+            width: 120px;
+            font-size: 25px;
+            text-align: center;
+            }
+
+         input[type="txt"],
+         input[type="email"],
+         input[type="password"]{
+            padding: 8px;
+            margin: 8px -2px;
+            border: 1px solid #ccc;
+            border-radius: 10px;   
+            width: 310px;
+            font-size: medium;
+          }
+
+      #btn{
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin: 8px 1px;
+          }
+      #btn:hover
+          {
+            cursor: pointer;
+            background-color: white;
+            color: black;
+          }
+
+      .fp{
+            font-size: 23px;
+            color:rgb(255, 0, 0); 
+            margin: 8px;
+         }
+     .fp:hover{
+       color: white;
+       background-color: black;
+     }
+       
+</style>
+</head>
+<body>
+<div class="container">
+
+<form action="web1.html"  method="get"> 
+<h2 class="lgn">Login</h2>
+
+<div class="fn">
+<label for="FirstName">First Name:</label>     
+<input type="txt" id='fn' name="FirstName" placeholder="Enter Your First-Name" required>
+
+<label for="LastName">Last Name:</label>
+<input type="txt" id="ln" name="LastName" placeholder="Enter Your Last-Name" required>
+
+<label for="Email">E-Mail Id:</label>
+<input type="email" id="em" name="email" placeholder="Enter Your E-Mail" required>
+
+<label for="Password">Password:</label>
+<input type="password" id="ps" name="password" placeholder="Enter Your Password" required>
+</div>
+
+<div class="btn">
+<input type="Submit" id="btn" value="Submit">
+</div>
+
+<div>
+<a class="fp" href="web2.html">Forgot Password?</a>
+</div>
+</form>
+
+</div>
+</body>
+</html>
+
+

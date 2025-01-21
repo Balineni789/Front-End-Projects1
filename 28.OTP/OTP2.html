@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello</title>
+<style>
+
+body{
+     background-image : url("car.AVIF");
+     background-repeat : no-repeat;
+     background-size : cover;
+}
+.OTP {
+    width: 407px;
+    height: 252px;
+    background-image: url(hd.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 85px;
+    padding: 30px;
+    border-radius: 34px;
+    border-color: black;
+    border-style: double;
+    border-block-width: 12px;
+    box-shadow: 0px 0px 18px 6px #f74f4ff5;
+}
+button{
+  background-color: aqua;
+  border-radius: 30px;
+  font-size: 20px;
+  margin: 20px;
+  padding: 10px;
+  color:black;
+}
+.OTP2 {
+    padding: 7px;
+    margin: 7px 97px;
+    background-color: #00fff494;
+    width: 200px;
+    border-radius: 30px;
+    font-size: 20px;
+    color: Red;
+}
+</style>
+</head>
+<center><body>
+  
+<script>
+ function fun()
+ {
+ this.otp =(Math.floor(Math.random() * 1000000))
+   const otp1 = document.getElementById('otpDisplay');
+            otp1.textContent = " "+otp;
+ }
+ </script>
+     <div class="OTP" style="text-align:center">
+    <h2> Check Six Digit OTP</h2>
+
+    <button type="button" onclick="fun()">GET OTP</button><br><br>
+    
+      <div class="OTP2">
+    OTP :<span id="otpDisplay"></span> 
+  </div>
+
+  </div>
+</body></center>
+</html>

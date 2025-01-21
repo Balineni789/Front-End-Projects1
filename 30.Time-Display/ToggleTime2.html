@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <title>Web Page</title>
+    <style>
+
+     body{
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 1.8);
+ }
+
+    h1 {
+       color: #29292996;
+       background-color: #5dc9af;
+       width: 250px;
+       height: 50px;
+       letter-spacing: 2px;
+       border-radius: 15px;
+       text-align: center;
+       margin: 25px auto;
+       line-height: 47px;
+     }
+      
+      #Timer{
+        display: none;
+        font-size: 25px;
+        text-align: center;
+        background-color: #0a090991;
+      }
+      
+      #hour, #minute, #second{
+        background-color: lightgray;
+        opacity: 0.7;
+        line-height: 80px;
+        font-size: 50px;
+        width: 105px;
+        height: 80px;
+        display: inline-block;
+      }
+      
+      .text{
+        display: flex;
+        background-color: lightblue;
+        width: 105px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        margin: 6px;
+      }
+      
+      #ampm{
+        color: black;
+        background-color: #f1dcbcd9;
+        font-size: 24px;
+        position: absolute;
+        bottom: 285px;
+        line-height: 35px;
+        width: 50px;
+      }
+      
+      .bn{
+        text-align: center;
+        margin: 10px;
+      }
+      
+     #btn{
+      width: 180px;
+      color: white;
+      border: 2px solid black;
+      background-color: red;
+      border-radius: 3px;
+      font-size: 25px;
+      padding: 5px;
+      }
+  
+    #btn:hover{
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: green;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="tt"><h1>Display Clock</h1></div>
+    <div id="Timer">
+      <div>
+         <span id="hour">00</span>
+         <span class="text">Hours</span>
+      </div>
+      <div>
+        <span id="minute">00</span>
+        <span class="text">Minutes</span>      
+      </div>
+      <div>
+        <span id="second">00</span>
+        <span class="text">Seconds</span>
+      </div>
+      <div>
+        <span id="ampm">PM</span>
+      </div>
+    </div>
+    <div class="bn"><button id="btn">Display Time</button></div>
+    
+    <script>
+      const hrE1 = document.getElementById('hour');
+      const minE1 = document.getElementById('minute');
+      const secE1 = document.getElementById('second');
+      const ampmE1 = document.getElementById('ampm');
+      
+      function updateClock(){
+      let h = new Date().getHours();
+      let m = new Date().getMinutes();
+      let s = new Date().getSeconds();
+      let ampm = h > 12 ? "PM" : "AM";
+      
+      h = h > 12 ? h - 12 : h;  
+      h = h === 0 ? 12 : h;
+      h = h < 10 ? "0" + h : h; 
+      m = m < 10 ? "0" + m : m;
+      s = s < 10 ? "0" + s : s;   
+      
+      hrE1.innerText = h;
+      minE1.innerText = m;
+      secE1.innerText = s;
+      ampmE1.innerText = ampm;
+      
+      setTimeout(updateClock, 1000);
+    }
+    
+    const btn = document.getElementById('btn');
+    
+    btn.addEventListener('click', function(){
+      const timeE1 = document.getElementById('Timer');
+      
+      if(timeE1.style.display === "none"){
+        timeE1.style.display = "flex";
+        updateClock()
+      }else{
+        timeE1.style.display = "none"
+      }
+    })
+    
+    </script>
+  </body>
+</html>

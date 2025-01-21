@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Styling for the clock container */
+.Clock {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for each time section (Hours, Minutes, Seconds) */
+.Clock div {
+    margin: 10px 0;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Styling the individual time parts (hour, minutes, seconds) */
+.time-part {
+    font-size: 3rem;       
+    font-weight: bold;      
+    color: #ff6f61;         
+    margin-right: 5px;      
+}
+
+/* Styling for the text labels (Hours, Minutes, Seconds) */
+.text {
+    font-size: 1.2rem;
+    color: #bbb;
+}
+
+/* Styling for the AM/PM label */
+#ampm {
+    font-size: 1.5rem;
+    color: #ff6f61;
+    margin-top: 10px;
+}
+
+/* Styling for the actual clock display */
+#clock {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff6f61;
+    margin-top: 20px;
+}
+
+/* Responsive design: Adjust for smaller screens */
+@media (max-width: 600px) {
+    .Clock {
+        padding: 20px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    #clock {
+        font-size: 2.5rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+  <div class="Clock">
+    <div>
+        <span id="hour" class="time-part">00</span>
+        <span class="text">Hours</span>
+    </div>
+    <div>
+        <span id="minutes" class="time-part">00</span>
+        <span class="text">Minutes</span>
+    </div>
+    <div>
+        <span id="seconds" class="time-part">00</span>
+        <span class="text">Seconds</span>
+    </div>
+    <div>
+        <span id="ampm">AM</span>
+    </div>
+    <div id="clock"></div>
+  </div>
+  <script>
+    function updateClock() {
+        const now = new Date();
+        let h = now.getHours();  // Get the current hour
+        let m = now.getMinutes();  // Get the current minute
+        let s = now.getSeconds();  // Get the current second
+        let ampm = h >= 12 ? 'PM' : 'AM';  // Determine AM or PM
+
+        // Convert to 12-hour format
+        h = h % 12;
+        h = h ? h : 12;  // If hour is '0', it should be '12'
+        m = m < 10 ? '0' + m : m;  // Add leading zero if needed
+        s = s < 10 ? '0' + s : s;  // Add leading zero if needed
+
+        // Update the time sections
+        document.getElementById('hour').innerText = h;
+        document.getElementById('minutes').innerText = m;
+        document.getElementById('seconds').innerText = s;
+        document.getElementById('ampm').innerText = ampm;
+          
+        // Update the clock every second
+        setTimeout(updateClock, 1000);
+    }
+
+    // Call the function to start the clock
+    updateClock();
+  </script>
+</body>
+</html>

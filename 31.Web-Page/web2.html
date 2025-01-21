@@ -1,0 +1,313 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, World!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: -30px;
+            padding: 0px;
+        }
+
+        .container {
+            background-color: lightgoldenrodyellow;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 450px;
+            height: 480px;
+            margin: 65px auto;
+            padding: 25px;
+            border-radius: 32px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #msg {
+            margin: 3px 0;
+            font-size: 24px;
+            color: red;
+            transition: color 0.3s ease;
+        }
+
+        .fn {
+            margin: 12px -1px;
+            width: 100%;
+            text-align: left;
+        }
+
+        label {
+            font-size: 25px;
+            margin: 10px 40px;
+            display: block;
+        }
+
+        input[type='text'],
+        input[type='email'],
+        input[type='password'] {
+            width: calc(90% - 35px);
+            padding: 12px;
+            margin: 5px 30px;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type='text']:focus,
+        input[type='email']:focus,
+        input[type='password']:focus {
+            border-color: #66afe9;
+            outline: none;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 10px;
+            margin: 20px 38px;
+            border: 2px solid red;
+            border-radius: 5px;
+            color: red;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+              color: green;
+              border: 2px solid green;
+        }
+
+        button[type="reset"] {
+              color: red;
+              margin: -21px -19px;
+              border: 2px solid red;
+        }
+        button[type="reset"]:hover {
+             color: green;
+             border: 2px solid green;
+        }
+        
+        button[type="close"] {
+              border: 2px solid black;
+        }
+        button[type="close"]:hover {
+             color: red;
+             border: 2px solid red;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <form id="myform">  
+        <div class="fn">
+            <label for="Name">Full Name:</label>
+            <input type="text" name="Name" placeholder="Enter Your Name" required/>
+
+            <label for="E-Mail">E-Mail Address:</label>
+            <input type="email" name="email" placeholder="Enter Your E-Mail Id" required/>
+
+            <label for="Newpassword">New Password:</label>        
+            <input type="password" name="password" maxlength="5" placeholder="Enter Your New Password" required/>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="close" id="cbtn">Close</button>
+        </div>
+    </form>
+
+    <div id="msg">Enter The Details!</div>
+</div>
+<script>
+    const den = document.getElementById("msg");
+          den.style.color = "red";
+         
+    document.getElementById("myform").addEventListener("submit", function(event) {
+        event.preventDefault();
+        den.innerText = "Form Submitted Successfully!";
+        den.style.color = "green";
+    });
+    
+    document.getElementById("myform").addEventListener("reset", function() {
+         den.innerText = "Enter The Details!";
+         den.style.color = "red";
+    });
+    
+    document.getElementById("cbtn").addEventListener("click", function() {
+      
+    window.location.href ="web.html";
+         
+    document.querySelector('.container').style.display = "none";
+    });
+          
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, World!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: -30px;
+            padding: 0px;
+        }
+
+    .container {
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 65px auto;
+    padding: 25px;
+    border-radius: 32px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 440px;  /* Control the max width */
+    width: 100%;       /* Allow container to expand based on content */
+    height: 470px;
+    min-width: 300px;  /* Minimum width to avoid too small a container */
+}
+
+        #msg {
+            margin: -4px 0;
+            font-size: 24px;
+            color: red;
+            transition: color 0.3s ease;
+        }
+
+        .fn {
+            margin: -2px 10px;
+            width: 100%;
+            text-align: left;
+        }
+
+        label {
+            font-size: 25px;
+            margin: 10px 40px;
+            display: block;
+        }
+
+        input[type='text'],
+        input[type='email'],
+        input[type='password'] {
+            width: calc(90% - 35px);
+            padding: 12px;
+            margin: 5px 30px;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type='text']:focus,
+        input[type='email']:focus,
+        input[type='password']:focus {
+            border-color: #66afe9;
+            outline: none;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 10px;
+            margin: 20px 38px;
+            border: 2px solid red;
+            border-radius: 5px;
+            color: white;
+            background-color: red;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+              color: white;
+              background-color: green;
+              border: 2px solid green;
+        }
+
+        button[type="reset"] {
+              color: white;
+              background-color: green;
+              margin: -21px -19px;
+              border: 2px solid green;
+        }
+        button[type="reset"]:hover {
+             color: white;
+             background-color: red;
+             border: 2px solid red;
+        }
+
+        /* Style for the cancel mark (X) */
+        #cbtn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 38px;
+            font-weight: bold;
+            color: red;
+            cursor: pointer;
+            padding: 5px;
+            background: transparent;
+            border: none;
+        }
+        #cbtn:hover {
+            color: green;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="container">
+   <button type="close" id="cbtn">&times;</button>
+    <form id="myform">  
+        <div class="fn">
+            <label for="Name">Full Name:</label>
+            <input type="text" name="Name" placeholder="Enter Your Name" required/>
+
+            <label for="E-Mail">E-Mail Address:</label>
+            <input type="email" name="email" placeholder="Enter Your E-Mail Id" required/>
+
+            <label for="Newpassword">New Password:</label>        
+            <input type="password" name="password" maxlength="5" placeholder="Enter Your New Password" required/>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+    <div id="msg">Enter The Details!</div>
+</div>
+<script>
+    const den = document.getElementById("msg");
+    den.style.color = "red";
+         
+    document.getElementById("myform").addEventListener("submit", function(event) {
+        event.preventDefault();
+        den.innerText = "Form Submitted Successfully!";
+        den.style.color = "green";
+    });
+    
+    document.getElementById("myform").addEventListener("click", function() {
+         den.innerText = "Enter The Details!";
+         den.style.color = "red";
+    });
+    
+    document.getElementById("cbtn").addEventListener("click", function() {
+        window.location.href ="web.html";
+        document.querySelector('.container').style.display = "none";
+    });
+          
+</script>
+</body>
+</html>
+

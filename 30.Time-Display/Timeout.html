@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello, World!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        #message {
+            color: #4CAF50; /* Green color */
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: opacity 1s ease; /* Smooth transition for opacity */
+            opacity: 0; /* Start with hidden text */
+        }
+        .message{
+          color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Time Out Function</h1>
+    <p class="message">The Meassage is Displayed After '3' Sec.</p>
+    <div id="message" >Hi Harsha! How Are You?</div>
+    
+    <script>
+        setTimeout(function() {
+            var messageDiv = document.getElementById("message");
+            
+            setTimeout(function() {
+                messageDiv.style.opacity = 1; // Change opacity to 1 to fade in
+            }, 10); // Small delay to allow for the initial opacity to be set
+        }, 3000);
+    </script>
+
+</body>
+</html>
+
