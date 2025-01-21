@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <style>
+     
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+    
+      .button-container {
+        display: flex;
+        gap: 10px; 
+        margin-bottom: 20px;
+      }
+      
+      .toggle-button{
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        background-color: red;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .toggle-button.active {
+        background-color: green;
+      }
+      
+       .content {
+            display: none; 
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+  </head>
+<body>
+    <div class="button-container">
+     <button class="toggle-button" data-cnt="This is Content Display-1">Button1</button>
+      <button class="toggle-button" data-cnt="This is Content Display-2">Button2</button>
+       <button class="toggle-button" data-cnt="This is Content Display-3">Button3</button>
+    </div>
+<div class="content" id="contentDisplay"></div> 
+  
+  <script>
+    const buttons = document.querySelectorAll(".toggle-button");
+    const contentDisplay = document.getElementById("contentDisplay");
+      
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+    
+        const content = button.getAttribute('data-cnt');
+         
+        if(contentDisplay.style.display === "block" && contentDisplay.textContent === content){
+            contentDisplay.style.display ='none';
+            contentDisplay.textContent = '';
+        }else{
+          contentDisplay.style.display = "block";
+          contentDisplay.textContent = content;
+        }
+      });
+     });
+     
+  </script>
+</body>
+</html>

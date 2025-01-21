@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart Quantity</title>
+  <style>
+    /* General Page Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container for the content */
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    /* Cart Display Styling */
+    #cartDisplay {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Button Styling */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    button:active {
+      background-color: #3e8e41;
+    }
+
+    /* Reset Cart Button */
+    button:focus {
+      outline: none;
+    }
+
+    /* Styling for the alert button */
+    .alert {
+      background-color: #f44336;
+    }
+    .alert:hover {
+      background-color: #e53935;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="cartDisplay">Cart quantity: 0</div>
+    <button onclick="showQuantity()">Show Quantity</button>
+    <button onclick="addToCart(1)">Add to Cart</button>
+    <button onclick="addToCart(2)">+2</button>
+    <button onclick="addToCart(3)">+3</button>
+    <button class="alert" onclick="resetCart()">Reset Cart</button>
+  </div>
+
+  <script>
+    let cartQuantity = 0;
+
+    // Function to update the cart display
+    function updateCartDisplay() {
+      document.getElementById('cartDisplay').textContent = `Cart quantity: ${cartQuantity}`;
+    }
+
+    // Show current quantity
+    function showQuantity() {
+      alert(`Cart quantity: ${cartQuantity}`);
+    }
+
+    // Add to cart with a specific quantity
+    function addToCart(amount) {
+      cartQuantity += amount;
+      updateCartDisplay();
+    }
+    // Reset the cart quantity
+    function resetCart() {
+      cartQuantity = 0;
+      document.getElementById('cartDisplay').textContent = 'Cart was Reset';
+      setTimeout(updateCartDisplay, 1000); // Update the display after 1 second
+    }
+  </script>
+</body>
+</html>
