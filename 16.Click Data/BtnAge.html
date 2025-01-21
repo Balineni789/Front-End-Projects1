@@ -1,0 +1,108 @@
+
+<html>
+  <head>
+     <title>
+       Hello Harsha
+     </title>
+     <style>
+       .label{
+         font-size: 30px;
+         color: blue;
+         margin: 6px;
+       }
+       input[type="number"]{
+         font-size: 22px;
+         margin: 6px;
+         width: 230px;
+         height: 40px;
+         display: column;
+         border: 2px solid red;
+         border-radius: 30px;
+         text-align: center;
+          cursor: pointer;
+       }
+       input:hover{
+          border: 2px solid green;
+       }
+       
+       #btn1, #btn2{
+         margin: 7px;
+         color: red;
+         padding: 7px;;
+         font-size: 22px;
+         border-radius: 12px;
+         border: 2px solid red;
+       }
+       #btn1:hover, #btn2:hover{
+         color: green;
+         cursor: pointer;
+         border: 2px solid green;
+       }
+       
+       #res1{
+            color: black;
+            opacity: 1.8;
+            margin: 15px 8px;
+            height: 40px;   
+            width: 430px;
+            font-size: 22px;
+            display: none;  
+            justify-content: center;
+            align-items: center;
+            border: 3px solid grey;
+            border-radius: 15px;
+            background-color: lightblue;
+       }
+       
+     </style>
+  </head>
+<body>
+  <h1>Hey Harsha!</h1>
+  
+  <div class="label">
+  <label>Enter Your Age:</label>
+  <input type="number" id="num1" placeholder="Enter Your Age"/>
+  </div>
+  
+  <button type="btn" id="btn1">Submit</button>
+  <button type="btn" id="btn2">Reset</button>
+  <div id="res1"></div>
+
+<script>
+  
+     const btnE1 = document.getElementById("btn1");
+  
+     btnE1.addEventListener("click",mynew);
+  
+     function mynew(){
+    
+     const numE1 = parseFloat(document.getElementById("num1").value);
+     const resE1 = document.getElementById("res1");
+     
+     resE1.style.display ="flex";
+     
+     if(numE1 < 18){
+       resE1.innerHTML = "You Are Minor : Not Eligible for Driving!";
+       resE1.style.color = "red"
+     }else if(numE1 >= 18){
+       resE1.innerHTML = "You Are Major : Eligible for Driving.";
+       resE1.style.color = "green"
+     }else{
+       resE1.innerHTML = "Invalid Details!";
+       resE1.style.color = "blue"
+     }
+  };
+    
+       const btnE2 = document.getElementById("btn2")
+       btnE2.addEventListener("click",reset);
+     
+       function reset(){
+       resE2 = document.getElementById("res1")
+       resE2.style.display = "none";
+  };
+     
+</script>
+
+</body>
+</html>
+

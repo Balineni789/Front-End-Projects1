@@ -1,0 +1,126 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#cnt 
+{
+  display: none;
+  margin: 10px;
+  padding: 2px;
+  width: 50%;
+  border: 2px solid red;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.btn
+{
+  background-color: white;
+  font-size: 15px;
+  border-radius: 9px;
+  border-color: aqua;
+  color: black;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Click Event</h2>
+
+<button id="btn" class="btn">Click It</button>
+
+<div id="cnt">Hey Harsha What's Up.</div>
+
+<script>
+
+const togglebtn = document.getElementById("btn");
+const togglecnt = document.getElementById("cnt");
+
+togglecnt.style.display ='none' //Hides Content
+
+togglebtn.addEventListener('click',function(){
+    if(togglecnt.style.display==='none'){
+      togglecnt.style.display ='block';//Shows Content
+    }else{
+      togglecnt.style.display ='none';//Hides Content
+    }
+  })
+  
+</script>
+
+</body>
+</html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#cnt 
+{
+  display: none;
+  margin: 10px;
+  padding: 2px;
+  width: 50%;
+  border: 2px solid red;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.btn
+{
+  background-color: white;
+  font-size: 15px;
+  border-radius: 9px;
+  border-color: aqua;
+  color: black;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+  
+<h2>Click Event</h2>
+
+<button id="btn" class="btn" onclick="New()">Click It</button>
+
+<div id="cnt">Hey Harsha What's Up.</div>
+
+<script>
+const togglebtn = document.getElementById("btn");
+const togglecnt = document.getElementById("cnt");
+
+togglecnt.style.display ='none' //Hides Content
+
+   function New(){
+    if(togglecnt.style.display==='none'){
+      togglecnt.style.display ='block';//Shows Content
+    }else{
+      togglecnt.style.display ='none';//Hides Content
+    }
+  }
+</script>
+
+</body>
+</html> -->
+
+
+
+

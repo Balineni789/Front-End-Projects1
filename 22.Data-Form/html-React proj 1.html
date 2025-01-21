@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+   <style>
+
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h3{
+        text-decoration: underline;
+        text-align: center;
+        font-size: 25px;
+        color: blue;
+        line-height: 2px;
+      }
+
+      .form-container {
+        width: 250px;
+        height: 365px;
+        padding: 30px;
+        text-align: left;
+        line-height: 12px;
+        border-radius: 10px;
+        border: 2px solid black;
+        background-color: lightblue;
+      }
+
+      .labInp {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 5px -5px;
+        border-radius: 5px;
+      }
+
+      .labInp label {
+        font-weight: bold;
+        margin: 10px 10px;
+      }
+
+      .labInp input {
+        width: 95%;
+        padding: 8px;
+        color: gray;
+        font-size: 15px;
+        font-style: bold;
+        margin-left: 12px;
+        margin-bottom: 5px;
+        text-align: center;
+        border-radius: 5px;
+        box-sizing: border-box;
+        border: 2px solid red;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn button {
+        color: white;
+        border: none;
+        width: 160px;
+        margin: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: red;
+      }
+
+      .btn button:hover {
+        background-color: green;
+      }
+  
+      .Main{
+        display: flex;
+        margin: 8px;
+      }
+     
+     .h3{
+        text-align: center;
+        font-size: 25px;
+        color: blue;
+        line-height: 5px;
+     }
+
+/* Submitted Data */
+     
+.C {
+    margin: 50px;
+    width: 350px;
+    display: none;
+    height: 240px;
+    line-height: 34px;
+    background-color: lightblue;
+  }
+
+.Main {
+    display: flex;
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.l {
+    width: 70px;
+    margin: 4px 40px;
+    margin-left: 40px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.h {
+    color: blue;
+    margin: 20px;
+    font-size: 28px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.v{
+  color: grey;
+  font-weight: bold;
+}
+     
+   </style>
+  </head>
+  <body>
+    <form id="formData">
+      
+      <div class="form-container">
+        <h3>Sign-Up</h3>
+        
+        <div class="labInp">
+          <label for="name">Name:</label>
+          <input type="text" id="setn" placeholder="Enter Your Name" required /><br>
+
+          <label for="email">Email:</label>
+          <input type="email" id="sete" placeholder="Enter Your Email" required /><br>
+
+          <label for="password">Password:</label>
+          <input type="password" id="setp" placeholder="Enter Your Password" required /><br>
+        </div>
+        
+        <div class="btn">
+          <button type="submit">Submit</button>
+        </div>
+        
+      </div>
+    </form>
+  
+  <div id="Submitted Data" class="C">
+     <h3 class="h">Submitted Data</h3>
+
+      <div class="Main">
+      <label class="l">Name:</label>
+      <span class="v" id="ns">Balineni Harsha</span>
+      </div>
+      
+      <div class="Main">
+      <label class="l">E-mail:</label>
+      <span class="v" id="es">Harsha@gmail.com</span>
+      </div>
+      
+      <div class="Main">
+      <label class="l">Password:</label>
+      <span class="v" id="ps">******</span>
+      </div>
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  
+  const formE1 = document.getElementById("formData")
+  const subE1 = document.getElementById("Submitted Data")
+  const nameE1 = document.getElementById("ns")
+  const emailE1 = document.getElementById("es")
+  const passwordE1 = document.getElementById("ps")
+  
+  let name = "", email = "", password = "";
+  
+  formE1.addEventListener('submit',function(event){
+  event.preventDefault();
+  
+  name = document.getElementById("setn").value;
+  email = document.getElementById("sete").value;
+  password = document.getElementById("setp").value;
+  
+  const DatastoreE1 = {name,email,password};
+  
+  nameE1.textContent = DatastoreE1.name;
+  emailE1.textContent = DatastoreE1.email;
+  passwordE1.textContent = DatastoreE1.password;
+  subE1.style.display = "block";
+   })
+})
+</script>
+  </body>
+</html>

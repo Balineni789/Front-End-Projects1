@@ -1,0 +1,93 @@
+
+<html>
+<head>
+    <style>
+        .txt {
+            font-size: 35px;
+            color: Red;
+        }
+
+        .maxc {
+            background-color: lightblue;
+            width: 80%;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .minc {
+            font-size: 30px;
+            color: grey;
+        }
+
+        #num {
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            margin: 12px;
+            padding: 5px 15px;
+            width: 38%;
+        }
+
+        #btn {
+            color: red;
+            background-color: white;
+            border-radius: 8px;
+            font-size: 20px;
+            margin: 10px;
+            padding: 3px 8px;
+            opacity: 0.8;
+            width: 95px;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            color: green;
+            background-color: lightblue;
+            opacity: 0.7;
+            border-radius: 9px;
+        }
+
+        .res {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="txt">Details</h1>
+
+    <div class="maxc">
+        <form id="myform">
+            <div class="minc">
+                <label>Enter Your Age:</label>
+                <input type="number" id="num" placeholder="Enter Your Age" required />
+                <input type='submit' id="btn" />
+                <div class="res">Result: <span id="res"></span></div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const resE1 = document.getElementById("myform");
+        const resE2 = document.getElementById("res");
+
+        resE1.addEventListener("submit", function (event) {
+            event.preventDefault(); 
+            
+            resE2.style.color = "green"
+            
+            const age = parseInt(document.getElementById("num").value); 
+           
+            if(age < 18){
+              resE2.innerText ="Minor"
+            }else if(age <= 50 ){
+              resE2.innerText ="Major"
+            }else{
+              resE2.innerText ="Older"
+            }
+        });
+    </script>
+</body>
+</html>

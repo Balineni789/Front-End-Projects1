@@ -1,0 +1,36 @@
+body { 
+    background-image : url("C:\\Users\\HP\\Downloads\\hd.jpg");
+    background-repeat : no-repeat;
+    background-attachment : fixed;
+    background-size : cover;
+}
+h1{background-color: skyblue;
+color: black;
+}
+#Content1{
+color: Aqua;
+}
+#Content1{
+color: Aqua;
+}
+
+#Content{
+color: orange;
+}
+.hid1{background-color: red;
+}
+.hid2{background-color: blue;
+}
+.hid3{background-color: grey;
+}
+.hid4{background-color: yellow;
+color: black;
+}
+.hid5{background-color: black;
+color: red;
+}
+.hid6{background-color: orange;
+}
+#image{
+    border-radius:14px;
+  }

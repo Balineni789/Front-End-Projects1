@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form with Buttons</title>
+    <style>
+        #myForm {
+            border: 5px solid #ccc;
+            padding: 28px;
+            width: 170px;
+            margin: 30px 120px;
+        }
+        #res {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="myForm">
+    <h2>My Form</h2>
+    <form onsubmit="event.preventDefault(); handleSubmit();">
+      
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <button type="submit">Submit</button>
+        <button type="button" onclick="handleReset()">Reset</button>
+        <button type="button" onclick="handleClose()">Close</button>
+        
+        <div id="res"></div>
+    </form>
+</div>
+
+<script>
+    function handleSubmit() {
+        const resE1 = document.getElementById("res");
+        resE1.innerHTML = "Form submitted!";
+        resE1.style.color = "Green"
+    }
+
+    function handleReset() {
+        const resE2 = document.getElementById("res");
+        const resE3 = document.getElementById("name");
+        const resE4 = document.getElementById("email");
+        
+        resE3.value = "";
+        resE4.value = "";
+        resE2.innerHTML = "Form Reset!";
+        resE2.style.color = "Red"
+    }
+
+    function handleClose() {
+        const resE5= document.getElementById("myForm");
+        resE5.style.display = "none";
+    }
+</script>
+</body>
+</html>

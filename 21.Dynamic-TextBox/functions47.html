@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#toggleCnt 
+{
+  display: none;
+  background-color: aqua;
+  color: black;
+  width: 300px;
+  height: 100px;  
+  padding: 40px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  text-align: center;
+  
+}
+  
+#toggleCnt1
+{
+  display: none;
+  color: white;
+  background-color: black;
+  width: 300px;
+  height: 100px;  
+  padding: 40px;
+  border: 2px solid aqua;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.btn
+{
+          background-color: white;
+          border-radius: 10px;
+          font-size: 15px;
+          color: red;
+          margin: 10px;
+          padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<h1>Click The Button Below</h1>
+<button id="togglebtn" class="btn">Click Me</button>
+<div  id="toggleCnt">Hey Harsha</div><br>
+<div  id="toggleCnt1">How Are You!</div>
+
+<script>
+const toggleButton = document.getElementById("togglebtn")
+const toggleContent = document.getElementById("toggleCnt")
+const toggleContent1 = document.getElementById("toggleCnt1")
+
+toggleContent.style.display ="none" //It Hides The Content On Web Page.
+toggleContent1.style.display ="none"
+
+toggleButton.addEventListener("click", function()
+{
+  
+  if(toggleContent.style.display!=="none"){ 
+    toggleContent.style.display ="none" // hides The Content
+  }else{
+    toggleContent.style.display ="block"// shows The Content
+  }
+  
+  if(toggleContent1.style.display!=="none"){
+    toggleContent1.style.display ="none" // hides The Content
+  }else{
+    toggleContent1.style.display ="block"// shows The Content
+  }
+  
+});
+</script>
+</body>
+</html>
+
+

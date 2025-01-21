@@ -1,0 +1,87 @@
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="functions45.css">
+     <title>Javascript Series</title>
+ </head>
+ 
+ <body>
+     <header>
+         <nav>
+             <div id="company" class="nav-left" onmouseenter="changeCompany()" onmouseout="normal()">
+                 Company
+             </div>
+             <div class="nav-right">
+                 <ul>
+                     <li class="revenue">Revenue</li>
+                     <li class="sales">Sales</li>
+                     <li class="customers">Customers</li>
+                     <li class="reports">Reports</li>
+                     <li class="settings">Settings</li>
+                 </ul>
+             </div>
+             <div class="dark-theme" onclick=darkTheme() ondblclick="lightTheme()">
+                 Dark Theme
+             </div>
+             <div id="loginBtn">
+                 Login
+             </div>
+ 
+             <button id="close">Close Sidebar</button>
+ 
+         </nav>
+     </header>
+     <div class="login-modal" id="loginSection">
+         <h3 class="loginTitle">Login</h3>
+         <div id="closeBtn">Close</div>
+         <input type="text" placeholder="Enter your name"><br>
+         <input type="password" placeholder="Enter your password"><br>
+         <button id="loginSubmit">Submit</button>
+     </div>
+     <div class="sidenav">
+         <ul>
+             <li>Dashboard</li>
+             <li class="revenue">Revenue</li>
+             <li class="sales">Sales</li>
+             <li class="customers">Customers</li>
+             <li class="reports">Reports</li>
+             <li class="meetings">Meetings</li>
+             <li class="events">Events</li>
+             <li class="settings">Settings</li>
+         </ul>
+     </div>
+ 
+     <div class="main">
+         <div class="section revenue" onmouseover="eleHover(this)" onmouseout="eleOut(this)">
+             <h2>Revenue</h2>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+         </div>
+         <div class="section sales" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+             <h2>Sales</h2>
+             <p>Ut euismod efficitur turpis, non tincidunt nibh volutpat sed.</p>
+         </div>
+         <div class="section Customers" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+             <h2>Customers</h2>
+             <p>Suspendisse semper ipsum eget neque malesuada auctor.</p>
+         </div>
+         <div class="section reports" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+             <h2>Reports</h2>
+             <p>Morbi id feugiat mauris, at tempus mi.</p>
+         </div>
+         <div class="section meetings" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+             <h2>Meetings</h2>
+             <p>Nulla facilisi. Vestibulum vitae eros nec lectus posuere ultricies.</p>
+         </div>
+         <div class="section events" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+             <h2>Events</h2>
+             <p>Quisque eu massa a mauris ultricies dapibus non vitae nulla.</p>
+         </div>
+    </div>
+         <script src="functions45.js"></script>
+ </body>
+ </html>

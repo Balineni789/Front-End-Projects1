@@ -1,0 +1,162 @@
+
+<html>
+  <head>
+    <title></title>
+  </head>
+  
+  <style>
+
+        body{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+        }
+
+      .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 340px;
+            width: 600px;
+            margin: 140px; 
+            background: url('hd.jpg');
+            background-attachment: fixed;
+            background-size: cover; 
+            opacity: 0.8;
+        }
+
+    #res{
+        background-color: #add8e6c7;
+        margin: 10px;
+        width: 450px;
+        height: 40px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        text-align: center;
+        font-size: 23px;
+        border-radius: 10px;
+        border: 2px solid rgb(0, 0, 0);
+       }
+     
+     input[type="number"]{
+       margin: 5px;
+       padding: 3px;
+       width: 80px;
+       color: blue;
+       font-size: 20px;
+       border-radius: 4px;
+      }
+     
+      input:hover{
+       cursor: pointer;
+     }
+     
+     .label{
+       background-color: #add8e6c7;
+       margin: 6px;
+       padding: 3px;
+       opacity: 0.8;
+       color: black;
+       font-size: 25px;
+      }
+     
+     button{
+       font-size: 22px;
+       opacity: 0.6;
+       color: red;
+       margin: 6px;
+       padding: 6px;
+       width: 100px;
+       border: 2px solid;
+       border-radius: 10px;
+      }
+     button:hover{
+       cursor:pointer;
+       color: green;
+      }   
+  
+      .button-container {
+        display: flex; 
+        justify-content: center; /* Center the buttons */
+    }
+
+  </style>
+  
+<body>
+  <div class="container">
+  <h1>Click Event</h1>
+  
+   <div class="label">
+   <label>First Number:</label>
+   <input type ="number" id= "t1"/>
+
+   <label>Second Number:</label>
+   <input type ="number" id= "t2"/>
+   </div>
+   
+   <div class="button-container">
+   <button type="button" id="btn">Submit</button>
+   <button type="button" id="btn1">Reset</button>
+   </div>
+
+   <div id="res"></div>
+   </div>
+<script>
+
+const btnE1 = document.getElementById("btn");
+
+document.getElementById('res').style.display ="none"; //none-hides //block-shows//
+
+btnE1.addEventListener("click",myfun)
+
+     function myfun(){
+
+     const resE1 = document.getElementById("res"); 
+     const numE1 = parseFloat(document.getElementById("t1").value);
+     const numE2 = parseFloat(document.getElementById("t2").value);
+     
+     resE1.style.display= "flex";
+
+//      if(isNaN(num1) || isNaN(num2)) {
+//           resEl.innerHTML = "Please Enter Valid Numbers in Both Fields!";
+//            resEl.style.color = "black";
+//             return;
+//      };
+
+     if(numE1 > numE2){
+       resE1.innerHTML = "First Number Greater Than Second Number";
+       resE1.style.color = "green";
+     
+     }else if(numE1 < numE2){
+       resE1.innerHTML = "First Number Smaller Than Second Number";
+       resE1.style.color = "red";
+       
+     }else if(numE1 == numE2){ 
+       resE1.innerHTML = "Both Numbers are Equal";
+       resE1.style.color = "blue";
+
+      }else{ 
+         document.getElementById("res").innerHTML = "Invalid Details!";
+         document.getElementById("res").style.color = "black";
+      }
+   }
+
+   const btnE2 = document.getElementById("btn1")
+
+   btnE2.addEventListener("click", reset);
+
+   function reset(){
+        document.getElementById("t1").value = ""; // Clear First number input;
+        document.getElementById("t2").value = ""; // Clear Second number input;
+
+            const resetE1 = document.getElementById("res");//clears The Result Text.
+            resetE1.innerHTML = ""; // Clear result text;
+            resetE1.style.display = "none"; // Hides result display;
+   }
+</script>
+
+</body>
+</html>
