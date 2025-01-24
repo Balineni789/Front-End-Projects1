@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient RGB Text Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+        }
+
+        .rgb-text {
+            font-size: 50px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, red,orange,lightblue,green,blue,indigo,violet,pink,purple,gold);
+            background-size: 200% 200%;
+            background-clip: text;
+            color: transparent;
+            animation: moveLight 10s linear infinite; /* Slower speed */
+        }
+
+        @keyframes moveLight {
+            0% {
+                background-position: 200% 0;
+            }
+            50% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rgb-text">Balineni Harsha</div>
+</body>
+</html>
